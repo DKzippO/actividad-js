@@ -4,10 +4,12 @@ Desarrollador: Juan Luis Menacho Ramírez
 Fecha: 2024-04-17
 Cambios: Colocación de arrays (estructura) para el funcionamiento de los nombres y nota.
 */
-// Función para generar una calificación aleatoria entre 20 y 100
+
+/*
 function randomica() {
     return Math.floor(Math.random() * 81) + 20;
 }
+*/
 
 // Lista de nombres de estudiantes con calificaciones inicializadas en 0
 let nombres = [
@@ -32,13 +34,13 @@ let mayor = -Infinity;
 let menor = Infinity;
 let suma = 0;
 for (let i = 0; i < nombres.length; i++) {
-    let final = randomica();
+    let final = Math.floor(Math.random() * 81) + 20;
     nombres[i].nota = final;
     // Actualizar la calificación mayor y menor
     if (final > mayor) {
         mayor = final;
     }
-    if (final < menor) {
+    else {
         menor = final;
     }
     // Sumar la calificación actual a la suma total

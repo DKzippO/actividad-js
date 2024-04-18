@@ -1,10 +1,16 @@
+/* 
+Generación de notas de manera aleatoria
+Desarrollador: Juan Luis Menacho Ramírez
+Fecha: 2024-04-17
+Cambios: Colocación de arrays (estructura) para el funcionamiento de los nombres y nota.
+*/
 // Función para generar una calificación aleatoria entre 20 y 100
-function generarCalificacionAleatoria() {
+function randomica() {
     return Math.floor(Math.random() * 81) + 20;
 }
 
-// Lista de nombres de estudiantes
-let nombresEstudiantes = [
+// Lista de nombres de estudiantes con calificaciones inicializadas en 0
+let nombres = [
     { nombre: 'Juan', nota: 0 },
     { nombre: 'Pedro', nota: 0 },
     { nombre: 'Maria', nota: 0 },
@@ -17,43 +23,36 @@ let nombresEstudiantes = [
     { nombre: 'Kelly', nota: 0 }
 ];
 
-// Inicializar el array de datos de estudiantes con calificaciones en 0
-let estudiantes = [];
-for (let i = 0; i < nombresEstudiantes.length; i++) {
-    estudiantes.push({ Nombre: nombresEstudiantes[i].nombre, Calificación: nombresEstudiantes[i].nota });
-}
-
-// Mostrar el array con calificaciones en 0
+// Mostrar la lista inicial de estudiantes con calificaciones en 0
 console.log("Datos generados (con calificaciones en 0):");
-console.log(estudiantes);
+console.log(nombres);
 
-// Generar calificaciones aleatorias y actualizar el array
-for (let i = 0; i < estudiantes.length; i++) {
-    estudiantes[i].Calificación = generarCalificacionAleatoria();
+// Generar calificaciones aleatorias y calcular la suma de calificaciones
+let mayor = -Infinity;
+let menor = Infinity;
+let suma = 0;
+for (let i = 0; i < nombres.length; i++) {
+    let final = randomica();
+    nombres[i].nota = final;
+    // Actualizar la calificación mayor y menor
+    if (final > mayor) {
+        mayor = final;
+    }
+    if (final < menor) {
+        menor = final;
+    }
+    // Sumar la calificación actual a la suma total
+    suma += final;
 }
 
-// Mostrar el array actualizado con las calificaciones
+// Mostrar el array actualizado con las calificaciones aleatorias
 console.log("Datos actualizados (con calificaciones aleatorias):");
-console.log(estudiantes);
+console.log(nombres);
 
-// Encontrar la calificación mayor, menor y calcular el promedio
-let calificacionMayor = estudiantes[0].Calificación;
-let calificacionMenor = estudiantes[0].Calificación;
-let sumaCalificaciones = 0;
-for (let i = 0; i < estudiantes.length; i++) {
-    let calificacionActual = estudiantes[i].Calificación;
-    if (calificacionActual > calificacionMayor) {
-        calificacionMayor = calificacionActual;
-    }
-    if (calificacionActual < calificacionMenor) {
-        calificacionMenor = calificacionActual;
-    }
-    sumaCalificaciones += calificacionActual;
-}
-
-let promedio = sumaCalificaciones / estudiantes.length;
+// Calcular el promedio de calificaciones
+let promedio = suma / nombres.length;
 
 // Mostrar los resultados
-console.log("Calificación mayor:", calificacionMayor);
-console.log("Calificación menor:", calificacionMenor);
+console.log("Calificación mayor:", mayor);
+console.log("Calificación menor:", menor);
 console.log("Promedio de calificaciones:", promedio);

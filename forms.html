@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/forms.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/forms.css">    
+</head>
+<body>
+    <p>
+        <button
+        onClick="document.getElementById('content_first').classList.toggle('highlight')">Registro de Alumnos</button>
+        <button
+        onClick="document.getElementById('content_second').classList.toggle('highlight')">Notas</button>
+        <button
+        onClick="document.getElementById('content_third').classList.toggle('highlight')">Materias</button>     
+        </p>
+        <div class="content" id="content_first">
+            <h2>Registro de Alumnos</h2>
+            <form>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre"><br>
+                <label for="direccion">Dirección:</label><br>
+                <input type="text" id="direccion" name="direccion"><br>
+                <label for="telefono">Teléfono:</label><br>
+                <input type="text" id="telefono" name="telefono"><br><br>
+                <input type="submit" value="Guardar">
+            </form>
+        </div><!-- #content_first -->
+        <div class="content" id="content_second">
+            <h2>Notas</h2>
+            <form>
+                <label for="alumno">Alumno:</label><br>
+                <input type="text" id="alumno" name="alumno"><br>
+                <label for="materia">Materia:</label><br>
+                <input type="text" id="materia" name="materia"><br>
+                <label for="nota">Nota:</label><br>
+                <input type="text" id="nota" name="nota"><br><br>
+                <input type="submit" value="Guardar">
+            </form>
+        </div><!-- #content_second -->
+        <div class="content" id="content_third">
+            <h2>Materias</h2>
+            <form>
+                <label for="idMateria">ID de Materia:</label><br>
+                <input type="text" id="idMateria" name="idMateria"><br>
+                <label for="nombreMateria">Nombre de Materia:</label><br>
+                <input type="text" id="nombreMateria" name="nombreMateria"><br>
+                <label for="semestre">Semestre:</label><br>
+                <input type="text" id="semestre" name="semestre"><br><br>
+                <input type="submit" value="Guardar">
+            </form>
+        </div><!-- #content_third -->
+</body>
+</html>
